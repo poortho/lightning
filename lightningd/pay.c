@@ -97,9 +97,6 @@ void json_add_payment_fields(struct json_stream *response,
 	if (amount_msat_greater(t->msatoshi, AMOUNT_MSAT(0)))
 		json_add_amount_msat_compat(response, t->msatoshi, "msatoshi",
 					    "amount_msat");
-	else
-		json_add_null(response, "amount_msat");
-
 
 	json_add_amount_msat_compat(response, t->msatoshi_sent,
 				    "msatoshi_sent", "amount_sent_msat");
